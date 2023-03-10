@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Happy Woman Days</title>
+        <style type="text/css">
+            body {
+	            margin: 0;
+	            background: #352F59;
+	            overflow: hidden;
+            }
+            .TwitterHeart {
+	            float: left;
+	            width: 100px;
+	            height: 100px;
+                /*background-image: url(https://abs.twimg.com/a/1446686284/img/t1/web_heart_animation.png);
+                background-position: 0 0;
+                cursor: url("https://image.flaticon.com/icons/png/128/593/593388.png"), auto;*/
+	            background-image: url("./img/web_heart_animation.png");
+	            background-position: 0 0;
+/*	            cursor: url("https://image.flaticon.com/icons/png/128/593/593388.png"), auto;*/
+	            cursor: url("./img/593388.png"), auto;
+            }
+            .TwitterHeart:hover {  
+            	background-position: -2800px 0;
+            }
+            .ImgPopup {
+	            position: absolute;
+	            width: 200px;
+	            opacity: 0;
+            }
+            .ImgPopup0 {
+	            left: 0px;
+	            top: 100px;
+	            z-index: 100;
+            }
+            .ImgPopup1 {
+	            left: 400px;
+	            top: 300px;
+	            z-index: 101;
+            }
+            .ImgPopup2 {
+	            left: 0px;
+	            top: 500px;
+	            z-index: 102;
+            }
+            .ImgPopup3 {
+	            right: 0;
+	            top: 0px;
+	            z-index: 103;
+            }
+            .ImgPopup4 {
+	            right: 0;
+	            top: 200px;
+	            z-index: 104;
+            }
+            .ImgPopup5 {
+	            right: 0;
+	            top: 500px;
+	            z-index: 105;
+            }
+            .ImgPopup6 {
+	            right: 200px;
+	            top: 0px;
+	            z-index: 106;
+            }
+            .ImgPopup7 {
+	            right: 400px;
+	            top: 200px;
+	            z-index: 107;
+            }
+            .ImgPopup8{
+	            right: 200px;
+	            top: 400px;
+	            z-index: 108
+            }
+            .ImgPopup9{
+	            left: 200px;
+	            top: 0px;
+	            z-index: 109
+            }
+            h1 {
+	            color: white;
+	            text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Chúc mừng ngày Phụ nữ Việt Nam 2023 ^^</h1>
+        <img id='image0' src='https://media3.giphy.com/media/J4JKD3AzeUJ8Q0Gdfv/source.gif' class='ImgPopup ImgPopup0'/>
+        <img id='image1' src='https://media3.giphy.com/media/l49JTSvwy9xBmXiNO/source.gif' class='ImgPopup ImgPopup1'/>
+        <img id='image2' src='https://i.pinimg.com/originals/b8/69/b0/b869b0d6fef1c3b1e7ba6a0e00b01044.gif' class='ImgPopup ImgPopup2'/>
+        <img id='image3' src='https://media4.giphy.com/media/RdoSt5SD2aDF65PQDR/giphy.gif' class='ImgPopup ImgPopup3'/>
+        <img id='image4' src='https://media2.giphy.com/media/3oFzmpzC5Nfmofyh3y/source.gif' class='ImgPopup ImgPopup4'/>
+        <img id='image5' src='https://media3.giphy.com/media/fdFP25RYQsx9YfL0vS/giphy.gif' class='ImgPopup ImgPopup5'/>
+        <img id='image6' src='https://media3.giphy.com/media/fdFP25RYQsx9YfL0vS/giphy.gif' class='ImgPopup ImgPopup6'/>
+        <img id='image7' src='https://media2.giphy.com/media/edPafmLayterFcperF/source.gif' class='ImgPopup ImgPopup7'/>
+        <img id='image8' src='https://media.tenor.com/images/0a234c8fb3b236d03b9195856431324b/tenor.gif' class='ImgPopup ImgPopup8'/>
+        <img id='image9' src='https://media2.giphy.com/media/w5RrRvSQy4LLN4PmgD/source.gif' class='ImgPopup ImgPopup9'/>
+
+        <script type="text/javascript">
+            let countHeartOver = 0;
+            
+            for (i = 0; i < 800; i++)
+                document.body.innerHTML += '<div id="' + i + '" class="TwitterHeart"></div>';
+            
+            window.addEventListener("mouseover", HeartAnimation);
+            
+            function HeartAnimation(event) {
+                countHeartOver++;
+                if (event.target.tagName != 'HTML') {
+                    var targetHeart = document.getElementById(event.target.id);
+                    var heartStateCounter = 1;
+                    let randomNumber = Math.floor(Math.random() * 10);
+                    document.getElementById('image'+randomNumber).style.opacity = 1;
+                    var timer = setInterval(function() {
+                        if (heartStateCounter != 29)
+                            targetHeart.style.backgroundPosition = -100 * heartStateCounter++ + 'px 0';
+                        else {
+                            clearInterval(timer);
+                        }
+                    }, 100);
+                    setTimeout(function() {
+                        document.getElementById('image'+randomNumber).style.opacity = 0;
+                    }, 5000);
+                }
+            }
+        </script>
+    </body>
+</html>
